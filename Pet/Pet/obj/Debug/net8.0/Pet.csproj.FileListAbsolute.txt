@@ -1,0 +1,15 @@
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\bin\Debug\net8.0\Pet.exe
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\bin\Debug\net8.0\Pet.deps.json
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\bin\Debug\net8.0\Pet.runtimeconfig.json
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\bin\Debug\net8.0\Pet.dll
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\bin\Debug\net8.0\Pet.pdb
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\Pet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\Pet.AssemblyInfoInputs.cache
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\Pet.AssemblyInfo.cs
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\Pet.csproj.CoreCompileInputs.cache
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\Pet.sourcelink.json
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\Pet.dll
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\refint\Pet.dll
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\Pet.pdb
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\Pet.genruntimeconfig.cache
+C:\Users\thila\OneDrive\Documents\GitHub\Assignment1\Pet\Pet\obj\Debug\net8.0\ref\Pet.dll
