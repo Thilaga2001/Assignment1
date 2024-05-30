@@ -28,7 +28,7 @@ namespace VirtualPetSimulator
                     petType = "Rabbit";
                     break;
                 default:
-                    petType = "Unknown" 
+                    petType = "Unknown";
                     break;
             }
 
