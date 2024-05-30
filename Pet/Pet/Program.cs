@@ -8,7 +8,7 @@ namespace VirtualPetSimulator
         {
             Console.WriteLine("Welcome to the Virtual Pet Simulator!");
 
-            // Creating Pet
+            // Pet creation
             Console.WriteLine("Please choose a type of pet:");
             Console.WriteLine("1. Cat");
             Console.WriteLine("2. Dog");
@@ -35,7 +35,7 @@ namespace VirtualPetSimulator
             Console.WriteLine($"You've chosen a {petType}. What would you like to name your pet?");
             string petName = Console.ReadLine();
 
-            Pet pet = new Pet(petType, petName); 
+            Pet pet = new Pet(petType, petName);
             Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.");
         }
     }
@@ -50,17 +50,5 @@ namespace VirtualPetSimulator
             Type = type;
             Name = name;
         }
-
-        public void DisplayInfo() 
-        {
-            Console.WriteLine($"Type: {Type}, Name: {Name}");
-        }
-
-        public void SetType(string type) 
-        {
-            Type = type;
-        }
-
-        private string health; 
     }
 }
