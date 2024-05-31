@@ -28,6 +28,7 @@ namespace Pet
             Hunger = Math.Max(0, Hunger - 1);
             Health = Math.Min(10, Health + 1);
             Console.WriteLine($"You fed {Name}. His hunger decreases, and health improves slightly.");
+            Console.WriteLine();
         }
 
         public void Play()
@@ -52,7 +53,7 @@ namespace Pet
             if (Hunger >= 8)
             {
                 Health = Math.Max(0, Health - 2);
-                Console.WriteLine($"{Name} is very hungry! Health is decreasing.");
+                Console.WriteLine($"{Name} is Starving! please stop playing and feed your {Name}.");
             }
 
             if (Happiness <= 2)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pet;
+using System;
 
 namespace VirtualPetSimulator
 {
@@ -12,7 +13,10 @@ namespace VirtualPetSimulator
             Console.WriteLine("Please choose a type of pet:");
             Console.WriteLine("1. Cat");
             Console.WriteLine("2. Dog");
-            Console.WriteLine("3. Rabbit");
+            Console.WriteLine("3. Rabbit\n");
+            // Console.WriteLine();
+            Console.Write("User Input: ");
+
             string petTypeInput = Console.ReadLine();
 
             string petType;
@@ -31,25 +35,32 @@ namespace VirtualPetSimulator
                     petType = "Unknown";
                     break;
             }
-
-            Console.WriteLine($"You've chosen a {petType}. What would you like to name your pet?");
+            //  Console.WriteLine();
+            Console.WriteLine($"\nYou've chosen a {petType}. What would you like to name your pet?");
+            Console.Write("User Input: ");
             string petName = Console.ReadLine();
 
+             
             Petaction pet = new Petaction(petType, petName);
-            Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.");
+            Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.\n");
+            // Console.WriteLine();
 
             bool running = true;
             while (running)
             {
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine("Main Menu:");
                 Console.WriteLine($"1. Feed {pet.Name}");
                 Console.WriteLine($"2. Play with {pet.Name}");
                 Console.WriteLine($"3. Let {pet.Name} Rest");
                 Console.WriteLine($"4. Check {pet.Name}'s Status");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Exit\n");
+                //   Console.WriteLine();
+                Console.Write("User Input: ");
 
                 string choice = Console.ReadLine();
+                //  Console.WriteLine();
+
                 switch (choice)
                 {
                     case "1":
@@ -66,64 +77,20 @@ namespace VirtualPetSimulator
                         break;
                     case "5":
                         running = false;
+
                         break;
                     default:
                         Console.WriteLine("Invalid choice. Please try again.");
                         break;
                 }
 
-                Console.WriteLine("Press Enter to continue...");
-                Console.ReadLine();
+                pet.PassTime();
+                    Console.WriteLine("Press Enter to continue...\n");
+                //  Console.ReadLine();
             }
-
-            Console.WriteLine("Thank you for playing with your pet. Goodbye!");
-        }
-    }
-
-    class Petaction
-    {
-        public string Type { get; private set; }
-        public string Name { get; private set; }
-        public int Hunger { get; private set; }
-        public int Happiness { get; private set; }
-        public int Health { get; private set; }
-
-        public Petaction(string type, string name)
-        {
-            Type = type;
-            Name = name;
-            Hunger = 5;
-            Happiness = 5;
-            Health = 8;
-        }
-
-        public void Feed()
-        {
-            Hunger = Math.Max(0, Hunger - 1);
-            Health = Math.Min(10, Health + 1);
-            Console.WriteLine($"You fed {Name}. His hunger decreases, and health improves slightly.");
-        }
-
-        public void Play()
-        {
-            Happiness = Math.Min(10, Happiness + 2);
-            Hunger = Math.Min(10, Hunger + 1);
-            Console.WriteLine($"You played with {Name}. His happiness increases, but he's a bit hungrier.");
-        }
-
-        public void Rest()
-        {
-            Health = Math.Min(10, Health + 2);
-            Happiness = Math.Max(0, Happiness - 1);
-            Console.WriteLine($"{Name} is resting. Health increased, Happiness decreased.");
-        }
-
-        public void DisplayStatus()
-        {
-            Console.WriteLine($"{Name}'s Status:");
-            Console.WriteLine($"- Hunger: {Hunger}");
-            Console.WriteLine($"- Happiness: {Happiness}");
-            Console.WriteLine($"- Health: {Health}");
+            //   Console.WriteLine();
+            Console.WriteLine($"Thank you for playing with {pet.Name}. Goodbye!");
         }
     }
 }
+    
