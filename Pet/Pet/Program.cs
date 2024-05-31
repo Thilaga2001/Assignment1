@@ -35,7 +35,7 @@ namespace VirtualPetSimulator
             Console.WriteLine($"You've chosen a {petType}. What would you like to name your pet?");
             string petName = Console.ReadLine();
 
-            Pet pet = new Pet(petType, petName);
+            Petaction pet = new Petaction(petType, petName);
             Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.");
 
             bool running = true;
@@ -80,7 +80,7 @@ namespace VirtualPetSimulator
         }
     }
 
-    class Pet
+    class Petaction
     {
         public string Type { get; private set; }
         public string Name { get; private set; }
@@ -88,7 +88,7 @@ namespace VirtualPetSimulator
         public int Happiness { get; private set; }
         public int Health { get; private set; }
 
-        public Pet(string type, string name)
+        public Petaction(string type, string name)
         {
             Type = type;
             Name = name;
@@ -101,21 +101,21 @@ namespace VirtualPetSimulator
         {
             Hunger = Math.Max(0, Hunger - 1);
             Health = Math.Min(10, Health + 1);
-            Console.WriteLine($"hunger decreases, and health improves");
+            Console.WriteLine($"You fed {Name}. His hunger decreases, and health improves slightly.");
         }
 
         public void Play()
         {
             Happiness = Math.Min(10, Happiness + 2);
             Hunger = Math.Min(10, Hunger + 1);
-            Console.WriteLine($"happiness increases, he's a bit hungrier.");
+            Console.WriteLine($"You played with {Name}. His happiness increases, but he's a bit hungrier.");
         }
 
         public void Rest()
         {
             Health = Math.Min(10, Health + 2);
             Happiness = Math.Max(0, Happiness - 1);
-            Console.WriteLine($"Health increased, Happiness decreased.");
+            Console.WriteLine($"{Name} is resting. Health increased, Happiness decreased.");
         }
 
         public void DisplayStatus()
