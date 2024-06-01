@@ -1,5 +1,4 @@
-﻿using Pet;
-using System;
+﻿using System;
 
 namespace VirtualPetSimulator
 {
@@ -13,13 +12,14 @@ namespace VirtualPetSimulator
             Console.WriteLine("Please choose a type of pet:");
             Console.WriteLine("1. Cat");
             Console.WriteLine("2. Dog");
-            Console.WriteLine("3. Rabbit\n");
-            // Console.WriteLine();
+            Console.WriteLine("3. Rabbit \n");
             Console.Write("User Input: ");
 
             string petTypeInput = Console.ReadLine();
 
             string petType;
+            int hoursPassed = 0;
+
             switch (petTypeInput)
             {
                 case "1":
@@ -35,62 +35,59 @@ namespace VirtualPetSimulator
                     petType = "Unknown";
                     break;
             }
-            //  Console.WriteLine();
-            Console.WriteLine($"\nYou've chosen a {petType}. What would you like to name your pet?");
-            Console.Write("User Input: ");
+
+            Console.WriteLine($"You've chosen a {petType}. What would you like to name your pet?\n");
+            Console.Write("Give the name for your pet: \n");
             string petName = Console.ReadLine();
 
-             
-            Petaction pet = new Petaction(petType, petName);
-            Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.\n");
-            // Console.WriteLine();
+            Pet pet = new Pet(petType, petName);
+            Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.");
 
             bool running = true;
             while (running)
             {
-                //Console.Clear();
+               // Console.Clear();
+              //  pet.DisplayStatus();
                 Console.WriteLine("Main Menu:");
                 Console.WriteLine($"1. Feed {pet.Name}");
                 Console.WriteLine($"2. Play with {pet.Name}");
                 Console.WriteLine($"3. Let {pet.Name} Rest");
                 Console.WriteLine($"4. Check {pet.Name}'s Status");
-                Console.WriteLine("5. Exit\n");
-                //   Console.WriteLine();
-                Console.Write("User Input: ");
+                Console.WriteLine("5. Exit");
 
                 string choice = Console.ReadLine();
-                //  Console.WriteLine();
-
                 switch (choice)
                 {
                     case "1":
                         pet.Feed();
+                        hoursPassed ++;
                         break;
                     case "2":
                         pet.Play();
+                        hoursPassed++;
                         break;
                     case "3":
                         pet.Rest();
-                        break;
+                        hoursPassed++;
+                        break;                
                     case "4":
-                        pet.DisplayStatus();
-                        break;
-                    case "5":
-                        running = false;
-
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice. Please try again.");
-                        break;
+                    pet.DisplayStatus();
+                    continue;
+                case "5":
+                    running = false;
+                    continue;
+                default:
+                    Console.WriteLine("Invalid choice. Please try again.");
+                    continue;
                 }
-
-                pet.PassTime();
-                    Console.WriteLine("Press Enter to continue...\n");
-                //  Console.ReadLine();
+                Console.WriteLine($"Hours passed: {hoursPassed}");
+                pet.PassTime(); 
+               
+                
             }
-            //   Console.WriteLine();
-            Console.WriteLine($"Thank you for playing with {pet.Name}. Goodbye!");
+
+            Console.WriteLine("Thank you for playing with your pet. Goodbye!");
         }
     }
 }
-    
+   
