@@ -39,15 +39,16 @@ namespace VirtualPetSimulator
             Console.WriteLine($"You've chosen a {petType}. What would you like to name your pet?\n");
             Console.Write("Give the name for your pet: ");
             string petName = Console.ReadLine();
-
+           
+            // Create a new pet instance
             Pet pet = new Pet(petType, petName);
             Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.\n");
 
             bool running = true;
             while (running)
             {
-               // Console.Clear();
-              
+                
+                // Display the main menu
                 Console.WriteLine("Main Menu:");
                 Console.WriteLine($"1. Feed {pet.Name}");
                 Console.WriteLine($"2. Play with {pet.Name}");
@@ -55,6 +56,7 @@ namespace VirtualPetSimulator
                 Console.WriteLine($"4. Check {pet.Name}'s Status");
                 Console.WriteLine("5. Exit\n");
 
+                // Get the player's choice
                 string choice = Console.ReadLine();
                 switch (choice)
                 {
