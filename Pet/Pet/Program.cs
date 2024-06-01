@@ -55,6 +55,7 @@ namespace VirtualPetSimulator
                 Console.WriteLine($"3. Let {pet.Name} Rest");
                 Console.WriteLine($"4. Check {pet.Name}'s Status");
                 Console.WriteLine("5. Exit\n");
+                Console.Write("User Choice: ");
 
                 // Get the player's choice
                 string choice = Console.ReadLine();
