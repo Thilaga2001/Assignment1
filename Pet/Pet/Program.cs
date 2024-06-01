@@ -37,23 +37,23 @@ namespace VirtualPetSimulator
             }
 
             Console.WriteLine($"You've chosen a {petType}. What would you like to name your pet?\n");
-            Console.Write("Give the name for your pet: \n");
+            Console.Write("Give the name for your pet: ");
             string petName = Console.ReadLine();
 
             Pet pet = new Pet(petType, petName);
-            Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.");
+            Console.WriteLine($"Welcome, {pet.Name}! Let's take good care of {pet.Type}.\n");
 
             bool running = true;
             while (running)
             {
                // Console.Clear();
-              //  pet.DisplayStatus();
+              
                 Console.WriteLine("Main Menu:");
                 Console.WriteLine($"1. Feed {pet.Name}");
                 Console.WriteLine($"2. Play with {pet.Name}");
                 Console.WriteLine($"3. Let {pet.Name} Rest");
                 Console.WriteLine($"4. Check {pet.Name}'s Status");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Exit\n");
 
                 string choice = Console.ReadLine();
                 switch (choice)
@@ -80,7 +80,7 @@ namespace VirtualPetSimulator
                     Console.WriteLine("Invalid choice. Please try again.");
                     continue;
                 }
-                Console.WriteLine($"Hours passed: {hoursPassed}");
+                Console.WriteLine($"Hours passed: {hoursPassed}\n");
                 pet.PassTime(); 
                
                 
